@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './LoginPage.css'
 
 export default function LoginPage({ onLogin }) {
     const [username, setUsername] = useState('')
@@ -16,15 +17,19 @@ export default function LoginPage({ onLogin }) {
     };
 
     return (
-        <div>
-          <h2>Login Page</h2>
-          <form onSubmit={handleSubmit}>
-            <label>
-              Username:
-              <input type="text" value={username} onChange={handleUsernameChange} />
-            </label>
-            <button type="submit">Login</button>
-          </form>
+        <div className="full-screen-container">
+          <div className="login-container">
+            <h2 className="login-title">Login Please</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="input-group">
+                <label>
+                  Username:
+                </label>
+                <input type="text" value={username} onChange={handleUsernameChange} />
+              </div>
+              <button type="submit">Login</button>
+            </form>
+          </div>
         </div>
       );
     };
